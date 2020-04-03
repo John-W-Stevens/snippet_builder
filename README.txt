@@ -1,10 +1,10 @@
-Welcome to the Snippet Builder
+Welcome to Snippet Builder
 
 Snippet Builder facilitates the easy creation of snippets for Sublime Text and Visual Studio Code.
-Both of these IDE's lack a helpful interface for creating your own snippets. This app is desgined to make creating snippets for both IDEs simple and intuitive.
+Both of these IDE's lack a helpful interface for creating your own snippets. This app is designed to make creating snippets for both IDEs simple and intuitive.
 
-Snippet Builder use embedded ACE editors (https://ace.c9.io/) and was designed with Bootstrap 4.
-It is functional, though it still needs to be tested (something I am working on). In addition the "about" link and all three links on the bottom aren't functional yet.
+Snippet Builder uses embedded ACE editors (https://ace.c9.io/) and was designed with Bootstrap 4.
+It is functional, though still needs testing (something I am working on). In addition the "about" link and all three links on the bottom aren't functional yet.
 
 Snippet Builder supports the input of a description, tab trigger, and scope as well as the use of tabstops, placeholders, and the insertion of a final cursor position.
 
@@ -16,7 +16,7 @@ Get Snippet Builder:
 Use Snippet Builder:
 
 1. Select either Sublime Text or Visual Studio Code (Sublime Text is selected by default)
-2. Choose your programming language from the dropdown (select TEXT if you want place text)
+2. Choose your programming language from the dropdown (select TEXT if you want plain text)
 3. Input values for description, tab trigger, and scope (scope is optional)
 4. Type your snippet (or paste in your code) into the code editor on the left
 5. Insert placeholders
