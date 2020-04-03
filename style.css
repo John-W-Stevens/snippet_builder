@@ -108,6 +108,7 @@
 
 .bottom_content {
     margin-top: 15px;
+    margin-bottom: 15px;
     border-top: 2px solid grey;
     padding-top: 10px;
 }
