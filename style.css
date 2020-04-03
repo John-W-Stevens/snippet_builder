@@ -1,0 +1,118 @@
+/* Reset / normalizer */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.top-bar {
+    margin-top: 10px;
+    border-bottom: 2px solid grey;
+}
+
+.btn-top { /* removes underlines from about,docs,github button links */
+    text-decoration: none !important;
+}
+
+.docs { /* The dropdown menu from the docs link */
+    margin-left: -15px;
+    padding-top: 0px;
+    max-height: 52px;
+}
+
+.docs_item { /* dropdown menu items for docs dropdown */
+    font-size: 12px;
+    margin: 0px 0px;
+    padding-left: 5px;
+}
+
+.subtext {
+    font-size: 14px;
+}
+
+
+.sm_main_header {
+    text-align: center;
+}
+
+.select_ide_header {
+    margin-top: 10px;
+}
+
+.editors { /* style for both #editor and #output ACE editors */
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    border:1px solid grey; /* change to #007bff for bootstrap primary */
+    border-radius: 5px;
+}
+
+.editor_container {
+    margin-top:10px;
+    min-height: 400px;
+    margin-bottom: 15px;
+}
+
+.user_input { /* necessary to maintain the right space between description,trigger,scope fields and #editor */
+    min-height: 50px;
+}
+
+.placeholder_dropup {
+    margin-bottom: 10px;
+}
+
+.placeholders_dropup_menu {
+    width: 345px;
+    height: 75px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+.placeholders_dropup_menu p {
+    margin: 0px 0px;
+    margin-bottom: 3px;
+}
+
+.select_ide_header {
+    margin-bottom: 10px;
+}
+
+.ide_selection{ /* Sublime Text button and VS Code button */
+    margin-bottom: 10px;
+}
+
+.heading { /* "Select your IDE and programming language:"snippet heading, and "Your Sublime Text/VS Code snippet:" heading */
+    text-align: center;
+}
+
+.your_snippet { /* This is the label over #output */
+    margin-top: 8px;
+    margin-bottom: 14px;
+}
+
+.hidden_heading { /* This is the label over #output, only visible in a large vw */
+    margin-top: 17px;
+    margin-bottom: 22px;
+}
+
+.dropup:hover .dropdown-menu { /* makes placeholders? dropup display on hover */
+    display: block;
+    margin-top: 0;
+}
+
+/* dropdown programming language menu */
+.dropdown-menu-list {
+  max-height: 320px;
+  min-width: 270px;
+  overflow: scroll;
+  padding-left: 0;
+}
+
+.bottom_content {
+    margin-top: 15px;
+    border-top: 2px solid grey;
+    padding-top: 10px;
+}
+
+.contact {
+    font-size: 12px;
+    margin-bottom: 15px;
+}

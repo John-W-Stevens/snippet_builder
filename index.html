@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<!-- 
+        Be kind.
+        Don't be evil.
+                        -->
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+
+    <!-- Custom CSS stylesheet-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Snippet Builder</title>
+
+  </head>
+
+  <body>
+
+    <!-- Used to get the window size -->
+    <div id="sizer">
+        <div class="d-block d-sm-none d-md-none d-lg-none d-xl-none" data-size="xs"></div>
+        <div class="d-none d-sm-block d-md-none d-lg-none d-xl-none" data-size="sm"></div>
+        <div class="d-none d-sm-none d-md-block d-lg-none d-xl-none" data-size="md"></div>
+        <div class="d-none d-sm-none d-md-none d-lg-block d-xl-none" data-size="lg"></div>
+        <div class="d-none d-sm-none d-md-none d-lg-none d-xl-block" data-size="xl"></div>
+    </div>
+
+
+    <!-- Bootstrap container class -->
+    <div class="container">
+        <!-- Start of Header -->
+        <!-- Header includes title and about,docs,GitHub links -->
+        <div class="row top-bar">
+            <!-- This h1 only displays at a md-sized viewport or greater -->
+            <div class="d-none d-md-inline-block col-md-9 d-lg-none">
+                <h1>Snippet Builder</h1>
+            </div>
+            <div class="d-none d-lg-inline-block col-lg-9">
+                <h1>Snippet Builder <small class="subtext">Create snippets for Sublime Text and VS code with ease!</small></h1>
+            </div>            
+            <!-- This h1 displays at xs and sm viewports -->
+            <div class="col-12 d-md-none">
+                <h1 class="sm_main_header">Snippet Builder</h1>
+            </div>   
+            
+            <!-- about, docs (dropdown), and GitHub links -->
+            <div class="d-inline-block col-2 offset-3 d-md-inline-block col-md-1 offset-md-0">
+                <button class="btn btn-small btn-link btn-top">about</button>
+            </div>
+            <div class="d-inline-block col-2 d-md-inline-block col-md-1">
+                <div class="dropdown">
+                    <button class="btn btn-small btn-link dropdown-toggle btn-top" type="button" id="docs" data-toggle="dropdown">docs</button>
+                    <div class="dropdown-menu docs">
+                        <a class="dropdown-item docs_item" target="_blank" rel="noopener noreferrer" href="https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/extensibility/snippets.html">Sublime Text snippet documentation</a>
+                        <a class="dropdown-item docs_item" target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">VS Code snippet documentation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="d-inline-block col-2 d-md-inline-block col-md-1">
+                <button class="btn btn-small btn-link btn-top">GitHub</button>
+            </div>       
+        </div>
+        <!-- End of Header -->
+
+        <!-- Start of "Select your IDE and programming language" header -->
+        <div class="row select_ide_header">
+            <div class="col-md-12 d-none d-md-inline-block">
+                <h4 class="heading">Select your IDE and programming language:</h4>
+            </div>
+            <div class="col-12 d-inline-block d-md-none">
+                <h4 class="heading">Select IDE and programming language:</h4>
+            </div>
+        </div>
+        <!-- End of "Select your IDE and programming language" header -->
+
+        <!-- Start of IDE and programming language selection row, includes Sublime Text button, VS Code button, and Programming language (dropdown) -->
+        <div class="row">
+            <!-- Sublime Text button -->    
+            <div class="col-12 col-sm-4 d-inline-block">
+                <button class="btn btn-outline-primary btn-md btn-block st3 ide_selection">Sublime Text 3</button>
+            </div>
+            <!-- Visual Studio Code button (displayed at xs,md,lg,xl viewports -->
+            <div class="col-12 col-sm-4 d-sm-none d-md-inline-block">
+                <button class="btn btn-outline-primary btn-md btn-block vsc ide_selection">Visual Studio Code</button>
+            </div>
+            <!-- VS Code button (only displayed at sm viewport -->
+            <div class="col-12 col-sm-4 d-none d-sm-inline-block d-md-none">
+                <button class="btn btn-outline-primary btn-md btn-block vsc ide_selection">VS Code</button>
+            </div>
+
+            <!-- Language Selection searchable dropdown button -->
+            <div class="col-12 col-sm-4 d-inline-block dropdown">
+                <button class="btn btn-outline-primary btn-block dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programming Language</button>     
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="dropdown-sorted-list">
+                    <!-- Search field inside dropdown menu -->
+                    <input type="text" class="form-control dropdown-item search" placeholder="Search" aria-label="Filter" id="search_box">
+                    <!-- Dropdown menu items: -->
+                    <ul class="dropdown-menu-list list">
+                        <li><button class="dropdown-item dropdown-item-name lang">ABAP</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">ABC</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">ActionScript</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">ADA</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Apache_Conf</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">AsciiDoc</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">ASL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Assembly_x86</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">AutoHotKey</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Apex</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">AQL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">BatchFile</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">C_Cpp</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">C9Search</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Crystal</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Cirru</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Clojure</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Cobol</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">coffee</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">ColdFusion</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">CSharp</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Csound_Document</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Csound_Orchestra</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Csound_Score</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">CSS</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Curly</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">D</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Dart</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Diff</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Dockerfile</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Dot</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Drools</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Edifact</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Eiffel</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">EJS</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Elixir</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Elm</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Erlang</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Forth</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Fortran</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">FSharp</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">FSL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">FTL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Gcode</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Gherkin</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Gitignore</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Glsl</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Gobstones</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">golang</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">GraphQLSchema</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Groovy</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">HAML</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Handlebars</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Haskell</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Haskell_Cabal</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">haXe</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Hjson</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">HTML</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">HTML_Elixir</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">HTML_Ruby</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">INI</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Io</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Jack</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Jade</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Java</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">JavaScript</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">JSON5</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">JSON</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">JSONiq</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">JSP</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">JSSM</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">JSX</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Julia</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Kotlin</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">LaTeX</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">LESS</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Liquid</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Lisp</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">LiveScript</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">LogiQL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">LSL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Lua</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">LuaPage</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Lucene</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Makefile</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Markdown</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Mask</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">MATLAB</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Maze</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">MEL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">MIXAL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">MUSHCode</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">MySQL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Nginx</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Nix</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Nim</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">NSIS</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Nunjucks</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">ObjectiveC</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">OCaml</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Pascal</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Perl</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Perl6</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">pgSQL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">PHP_Laravel_blade</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">PHP</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Puppet</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Pig</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Powershell</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Praat</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Prolog</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Properties</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Protobuf</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Python</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">R</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Razor</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">RDoc</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Red</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">RHTML</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">RST</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Ruby</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Rust</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">SASS</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">SCAD</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Scala</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Scheme</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">SCSS</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">SH</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">SJS</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Slim</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Smarty</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">snippets</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Soy_Template</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Space</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">SQL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">SQLServer</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Stylus</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">SVG</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Swift</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Tcl</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Terraform</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Tex</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Text</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Textile</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Toml</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">TSX</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Twig</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Typescript</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Vala</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">VBScript</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Velocity</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Verilog</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">VHDL</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Visualforce</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Wollok</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">XML</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">XQuery</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">YAML</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Zeek</button></li>
+                        <li><button class="dropdown-item dropdown-item-name lang">Django</button></li>       
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End of IDE/programming selection row -->
+
+        <!-- Start of main content -->
+        <div class="row">
+            <!-- Start of left content, includes input labels (1. Description, 2. Trigger, 3. Scope), input fields (descrption, trigger, scope), left ACE session (where user inputs code), placeholders? hoverable dropup, and reset placeholders button -->
+            <div class="col-md-6">
+                <!-- Input Labels (1. Description, 2. Trigger, 3. Scope) and their respective question-mark icons/tooltips -->
+                <div class="row top_labels">
+                    <div class="col-lg-4 d-none d-lg-inline-block">
+                        <h6>1. Description <img src="question-circle-fill.svg" data-toggle="tooltip" title="Optional snippet description"></h6>
+                    </div>
+                    <div class="col-lg-4 d-none d-lg-inline-block">
+                        <h6>2. Tab Trigger <img src="question-circle-fill.svg" data-toggle="tooltip" title="keyword that triggers snippet"></h6>
+                    </div>
+                    <div class="col-lg-4 d-none d-lg-inline-block">
+                        <h6>3. Scope <img src="question-circle-fill.svg" data-toggle="tooltip" title="Optional, default is global"></h6>
+                    </div>
+                </div>
+                <!-- Input fields (description, trigger, scope)-->
+                <div class="row top_content">
+                    <div class="col-md-4 user_input">
+                        <div class="input-group">
+                            <input type="text" name="description" class="form-control border-primary" placeholder="description" id="desc">
+                        </div>
+                    </div>
+                    <div class="col-md-4 user_input">
+                        <div class="input-group">
+                            <input type="text" name="trigger" class="form-control border-primary" placeholder="trigger" id="trig">
+                        </div>                        
+                    </div>
+                    <div class="col-md-4 user_input">
+                        <div class="input-group">
+                            <input type="text" name="trigger" class="form-control border-primary" placeholder="scope" id="scope">
+                        </div>                        
+                    </div>
+                </div>
+                <!-- ACE editor for user input -->
+                <div class="row editor_container">
+                    <div class="col-md-12">
+                        <!-- Input code editor -->
+                        <div class= "editors" id="aceEditor">// Type or Paste your snippet code here
+
+function example(arr) {
+    for (i = 0; i &lt; arr.length; i++) {
+        console.log('This is an example ', arr[i]);
+    }
+}</div>
+                    </div>
+                </div>
+                <!-- placeholders? dropup menu and reset placeholders button -->
+                <div class="row">
+                    <!-- placeholders? dropup -->
+                    <div class="dropup col-3 offset-1 d-inline-block placeholder_dropup">
+                        <a role="link" class="placeholder-a text-primary" id="tabstop_dropup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">placeholders?</a>
+                        <div class="dropdown-menu dropdown-menu-left placeholders_dropup_menu">
+                            <p>Insert a <strong>tabstop</strong> with <kbd>command</kbd> + <kbd>i</kbd></p>
+                            <p>Insert a <strong>placeholder</strong>: select text and press <kbd>command</kbd> + <kbd>j</kbd></p>
+                            <p>Insert <strong>final cursor position</strong> with <kbd>command</kbd> + <kbd>k</kbd></p>
+                        </div>
+                    </div>                    
+                    <!-- Reset Placeholders button -->
+                    <div class="col-5 offset-3 btn-group-md d-md-none d-lg-inline-block">
+                        <button class="btn btn-outline-primary btn-md reset_placeholders">Reset placeholders</button>
+                    </div>
+                    <div class="col-7 offset-1 d-none d-md-inline-block d-lg-none btn-group-md">
+                        <button class="btn btn-outline-primary btn-md reset_placeholders">Reset placeholders</button>
+                    </div>
+                </div>
+            </div>
+            <!-- End of left content -->
+
+            <!-- Start of right content, includes "Your Sublime Text/VS Code snippet" header, rightside ACE editor session, and copy to clipboard button -->
+
+            <div class="col-md-6">
+                <!-- "Your Sublime Text/VS Code snippet" header -->
+                <div class="row">
+                    <!-- Header displays on xs,sm, and md screensizes -->
+                    <div class="col-md-12 d-inline-block d-lg-none">
+                        <h4 class="heading your_snippet">Your VS Code Snippet:</h4>
+                    </div>
+                    <!-- Header only displays on lg and xl screen sizes -->
+                    <div class="col-lg-12 d-none d-lg-inline-block">
+                        <h2 class="heading hidden_heading">Your VS Code Snippet:</h2>
+                    </div>
+                </div>
+                <!-- Rightside ACE editor session -->
+                <div class="row editor_container">
+                    <div class="col-md-12">
+                        <!-- Output code editor-->
+                        <div class="editors" id="output">// Your snippet</div>
+                    </div>
+                </div>
+                <!-- Copy to clipboard button -->
+                <div class="row">
+                    <!-- Button displayed on screensizes: xs,sm, and md -->
+                    <div class="col-8 offset-2 d-lg-none _button btn-group-md">
+                        <button class="btn btn-outline-primary btn-md btn-block copy2clipboard">Copy to clipboard</button>
+                    </div>
+                    <!-- Button displayed on screensizes: lg and xl -->                    
+                    <div class="col-lg-6 offset-3 d-none d-lg-block _button btn-group-md">
+                        <button class="btn btn-outline-primary btn-md btn-block copy2clipboard">Copy to clipboard</button>
+                    </div>
+                </div>
+            </div> 
+            <!-- End of rightside content -->
+        </div>
+        <!-- End of main content -->
+
+        <!-- Start of bottom content, includes copyright, report-a-bug, and contact links -->
+        <div class="row bottom_content">
+            <div class="col-lg-3 offset-lg-3 col-md-4 offset-md-1 col-5">
+                <!-- <p class="contact">Copyright MIT Open License</p> -->
+                <a href="#" class="contact">Copyright MIT Open License</a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-4">
+                <a href="#" class="contact">Report a bug</a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-3">
+                <a href="#" class="contact">Contact</a>
+            </div>            
+        </div>
+        <!-- End of bottom content-->
+
+    <!-- End of bootstrap container -->
+    </div>
+
+    <!-- JavaScript -->
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      
+    <!-- bootstrap.js-->
+    <script src="bootstrap/js/bootstrap.js"></script>
+
+    <!-- Scripts for embeded ACE -->
+    <script src="ace-src-min-noconflict/ace.js"></script>
+
+    <!-- Script for using list.js -->
+    <script src="node_modules/list.js/dist/list.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+  </body>
+
+</html>
+ 

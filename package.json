@@ -1,0 +1,16 @@
+{
+  "name": "snippet_builder",
+  "version": "1.0.0",
+  "description": "Welcome to the Snippet Builder",
+  "main": "script.js",
+  "dependencies": {
+    "list.js": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "John Stevens <john.william.stevens1@gmail.com>",
+  "license": "MIT"
+}
