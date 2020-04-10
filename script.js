@@ -186,7 +186,7 @@ $(document).ready(function(){
 			snippet += '<!-- <description>'+description+'</description> -->\n'
 		}
 		else {
-			snippet += '<description>'+description+'</description\n'
+			snippet += '<description>'+description+'</description>\n'
 		}
 
 		if (trigger == "none" || trigger == ""){
